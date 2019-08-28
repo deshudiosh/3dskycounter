@@ -44,4 +44,3 @@ def scrape_user():
 
 if __name__ == '__main__':
     scrape_user()
-
