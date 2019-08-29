@@ -22,3 +22,8 @@ if __name__ == '__main__':
     sales2 = analize_dump("dumps/deckorator_2019-08-28_18-27-04.json")
     earned = (sales2-sales1) * 7 * .7 * 3.93
     print(earned)
+
+
+#  TODO: most sold
+#  TODO: fastest selling
+#  TODO: uplaods per year/month
