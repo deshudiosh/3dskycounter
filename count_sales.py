@@ -30,7 +30,11 @@ def scrape_user():
                 name = " ".join(item.contents[0].get('rel'))
                 link = item.contents[0].get('href')
 
-                obj = {"link": link, "name": name, "is_pro": is_pro, "downloads": downloads, "comments": comments, "likes": likes}
+                upload_date = BeautifulSoup(requests.get("https://3dsky.org" + link).content,
+                                            features="html.parser").find("li", "icon_date2").get_text(strip=True)
+
+                obj = {"link": link, "name": name, "is_pro": is_pro, "downloads": downloads, "comments": comments,
+                       "likes": likes, "upload_date": upload_date}
                 data.append(obj)
 
             print("Page number {} scraped".format(i))
@@ -47,4 +51,3 @@ if __name__ == '__main__':
 
 
 # TODO: multithreading
-# TODO: item uplaod date
